@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
+from selenium.webdrive.chrome.webdriver import Webdriver
 import unittest, time, re
 
 class UntitledTestCase(unittest.TestCase):
