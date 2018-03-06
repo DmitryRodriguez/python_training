@@ -5,29 +5,23 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-from selenium.webdrive.chrome.webdriver import Webdriver
 import unittest, time, re
 
-class UntitledTestCase(unittest.TestCase):
+class Login_to_adminpanel(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
-        self.base_url = "https://www.katalon.com/"
         self.verificationErrors = []
         self.accept_next_alert = True
     
-    def test_untitled_test_case(self):
+    def login_to_adminpanel(self):
         driver = self.driver
         driver.get("https://daily.ticketbird.com/admin/login/")
-        driver.find_element_by_id("id_username").click()
         driver.find_element_by_id("id_username").clear()
         driver.find_element_by_id("id_username").send_keys("atest")
         driver.find_element_by_id("id_password").clear()
-        driver.find_element_by_id("id_password").send_keys("Invento99")
-        driver.find_element_by_id("id_password").clear()
         driver.find_element_by_id("id_password").send_keys("stuff-fUr-testet2")
         driver.find_element_by_id("login-form").submit()
-        driver.find_element_by_link_text("Log out").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
